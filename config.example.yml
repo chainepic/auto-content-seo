@@ -1,0 +1,36 @@
+project:
+  name: "My Awesome Blog"
+  domain: "https://my-awesome-blog.com"
+  locale: "zh-CN"
+
+blog:
+  categories:
+    - "tech"
+    - "life"
+    - "tutorial"
+  tone: "专业且客观"
+  forbidden_keywords:
+    - "how-to-play"
+    - "单手牌攻略"
+
+models:
+  text:
+    provider: "deepseek"
+    api_key: "${DEEPSEEK_API_KEY}"
+    model: "deepseek-chat"
+  image:
+    provider: "wanx"
+    api_key: "${DASHSCOPE_API_KEY}"
+
+output:
+  type: "markdown"
+  markdown_dir: "./output_articles"
+  # type: "supabase"
+  # supabase_url: "${SUPABASE_URL}"
+  # supabase_key: "${SUPABASE_SERVICE_KEY}"
+
+notifications:
+  telegram:
+    enabled: false
+    bot_token: "${TG_BOT_TOKEN}"
+    chat_id: "${TG_CHAT_ID}"
